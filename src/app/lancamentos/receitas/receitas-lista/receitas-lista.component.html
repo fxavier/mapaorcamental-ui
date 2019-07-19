@@ -1,0 +1,39 @@
+<div fxLayout="column" class="p-2">
+
+  <div class="p-2">
+    <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="data">
+            <mat-header-cell *matHeaderCellDef>Data</mat-header-cell>
+            <mat-cell *matCellDef="let receita"> {{ receita.data }} </mat-cell>
+
+        </ng-container>
+
+        <ng-container matColumnDef="conta">
+            <mat-header-cell *matHeaderCellDef>Conta</mat-header-cell>
+            <mat-cell *matCellDef="let receita">{{  receita.conta }}</mat-cell>
+
+        </ng-container>
+
+        <ng-container matColumnDef="categoria">
+            <mat-header-cell *matHeaderCellDef>Categoria</mat-header-cell>
+            <mat-cell *matCellDef="let receita">{{ receita.categoria }}</mat-cell>
+
+        </ng-container>
+
+        <ng-container matColumnDef="valor">
+            <mat-header-cell *matHeaderCellDef>Valor</mat-header-cell>
+            <mat-cell *matCellDef="let receita">{{ receita.valor }}</mat-cell>
+
+        </ng-container>    
+
+        <ng-container matColumnDef="descricao">
+            <mat-header-cell *matHeaderCellDef>Descrição</mat-header-cell>
+            <mat-cell *matCellDef="let receita">{{ receita.descricao }}</mat-cell>
+
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+</div>
